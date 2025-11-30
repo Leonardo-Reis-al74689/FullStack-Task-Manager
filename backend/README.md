@@ -1,6 +1,6 @@
 # Task Manager - Backend Flask
 
-Backend REST API desenvolvido em Flask para o sistema de gerenciamento de tarefas.
+Backend REST API desenvolvido em Flask para o sistema de gestão de tarefas.
 
 ## 🚀 Tecnologias
 
@@ -9,13 +9,13 @@ Backend REST API desenvolvido em Flask para o sistema de gerenciamento de tarefa
 - **Flask-JWT-Extended** - Autenticação JWT
 - **PostgreSQL** - Banco de dados relacional
 - **Pydantic** - Validação de dados
-- **Passlib** - Hash de senhas
+- **Passlib** - Hash de palavras-passe
 
 ## 📋 Pré-requisitos
 
 - Python 3.8+
-- PostgreSQL instalado e rodando
-- pip (gerenciador de pacotes Python)
+- PostgreSQL instalado e em execução
+- pip (gestor de pacotes Python)
 
 ## 🔧 Instalação
 
@@ -61,25 +61,25 @@ A API estará disponível em `http://localhost:5000`
 ### Rotas Públicas
 
 #### POST `/api/auth/register`
-Registrar novo usuário
+Registar novo utilizador
 
 **Body:**
 ```json
 {
-  "username": "usuario",
-  "email": "usuario@example.com",
-  "password": "senha123"
+  "username": "utilizador",
+  "email": "utilizador@example.com",
+  "password": "palavra-passe123"
 }
 ```
 
 #### POST `/api/auth/login`
-Fazer login
+Iniciar sessão
 
 **Body:**
 ```json
 {
-  "username": "usuario",
-  "password": "senha123"
+  "username": "utilizador",
+  "password": "palavra-passe123"
 }
 ```
 
@@ -100,7 +100,7 @@ Authorization: Bearer <access_token>
 ```
 
 #### GET `/api/tasks`
-Listar todas as tarefas do usuário autenticado
+Listar todas as tarefas do utilizador autenticado
 
 #### POST `/api/tasks`
 Criar nova tarefa
@@ -129,13 +129,13 @@ Atualizar tarefa
 ```
 
 #### DELETE `/api/tasks/<task_id>`
-Deletar tarefa
+Eliminar tarefa
 
 ## 🔒 Segurança
 
 - **Autenticação JWT**: Tokens com expiração configurável
-- **Hash de Senhas**: Bcrypt com salt automático
-- **Isolamento de Recursos**: Usuários só acessam suas próprias tarefas
+- **Hash de Palavras-passe**: Bcrypt com salt automático
+- **Isolamento de Recursos**: Utilizadores só acedem às suas próprias tarefas
 - **Validação de Dados**: Pydantic + sanitização customizada
 - **Headers de Segurança**: XSS, Clickjacking, MIME sniffing protection
 - **CORS Restritivo**: Apenas origens permitidas
@@ -172,7 +172,7 @@ backend/
 │   │   ├── security_headers.py
 │   │   └── rate_limiter.py
 │   └── utils/               # Utilitários
-│       ├── security.py      # Hash de senhas
+│       ├── security.py      # Hash de palavras-passe
 │       ├── decorators.py    # Decoradores
 │       └── validators.py    # Validação e sanitização
 ├── config.py                # Configurações
@@ -204,7 +204,7 @@ Você pode testar a API usando ferramentas como:
 Exemplo com curl:
 
 ```bash
-# Registrar usuário
+# Registar utilizador
 curl -X POST http://localhost:5000/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"username":"teste","email":"teste@test.com","password":"123456"}'
