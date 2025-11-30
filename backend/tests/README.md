@@ -125,6 +125,6 @@ Os testes cobrem:
 1. **Isolamento**: Cada teste é independente
 2. **Fixtures**: Reutilização de código comum
 3. **Marcadores**: Organização por tipo de teste
-4. **Nomes descritivos**: Fácil identificar o que está sendo testado
+4. **Nomes descritivos**: Fácil identificar o que está a ser testado
 5. **Assertions claras**: Verificações específicas e legíveis
 
