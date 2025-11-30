@@ -1,0 +1,16 @@
+from passlib.context import CryptContext
+
+pwd_context = CryptContext(
+    schemes=["bcrypt"],
+    deprecated="auto",
+    bcrypt__rounds=12
+)
+
+def verify_password(plain_password: str, hashed_password: str) -> bool:
+    """Verifica se a palavra-passe fornecida corresponde ao hash"""
+    return pwd_context.verify(plain_password, hashed_password)
+
+def get_password_hash(password: str) -> str:
+    """Gera hash da palavra-passe"""
+    return pwd_context.hash(password)
+
