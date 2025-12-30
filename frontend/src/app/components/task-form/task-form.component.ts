@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TaskService } from '../../services/task.service';
@@ -23,7 +23,8 @@ export class TaskFormComponent implements OnInit {
     private taskService: TaskService,
     private router: Router,
     private route: ActivatedRoute,
-    private messagesService: MessagesService
+    private messagesService: MessagesService,
+    private cdr: ChangeDetectorRef
   ) {
     this.taskForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(ValidationRules.TASK_TITLE_MAX_LENGTH)]],
@@ -54,10 +55,12 @@ export class TaskFormComponent implements OnInit {
           completed: task.completed
         });
         this.isLoading = false;
+        this.cdr.detectChanges();
       },
       error: (error) => {
         this.errorMessage = error.message || this.messages.TASKS.LOAD_TASK_ERROR;
         this.isLoading = false;
+        this.cdr.detectChanges();
       }
     });
   }
@@ -81,6 +84,7 @@ export class TaskFormComponent implements OnInit {
           error: (error) => {
             this.errorMessage = error.message || this.messages.TASKS.UPDATE_ERROR;
             this.isLoading = false;
+            this.cdr.detectChanges();
           }
         });
       } else {
@@ -91,6 +95,7 @@ export class TaskFormComponent implements OnInit {
           error: (error) => {
             this.errorMessage = error.message || this.messages.TASKS.CREATE_ERROR;
             this.isLoading = false;
+            this.cdr.detectChanges();
           }
         });
       }

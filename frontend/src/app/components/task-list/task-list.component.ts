@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { AuthService } from '../../services/auth.service';
 import { ThemeService } from '../../core/services/theme.service';
@@ -24,7 +24,8 @@ export class TaskListComponent implements OnInit {
     private taskService: TaskService,
     private authService: AuthService,
     private themeService: ThemeService,
-    private messagesService: MessagesService
+    private messagesService: MessagesService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -44,10 +45,12 @@ export class TaskListComponent implements OnInit {
       next: (response) => {
         this.tasks = response.tasks || [];
         this.isLoading = false;
+        this.cdr.detectChanges();
       },
       error: (error) => {
         this.errorMessage = error.message || this.messages.TASKS.LOAD_ERROR;
         this.isLoading = false;
+        this.cdr.detectChanges();
       }
     });
   }
@@ -67,6 +70,7 @@ export class TaskListComponent implements OnInit {
       },
       error: (error) => {
         this.errorMessage = error.message || this.messages.TASKS.UPDATE_ERROR;
+        this.cdr.detectChanges();
       }
     });
   }
