@@ -55,7 +55,18 @@ describe('TaskListComponent', () => {
     const messagesServiceSpy = jasmine.createSpyObj('MessagesService', [], {
       TASKS: {
         LOAD_ERROR: 'Erro ao carregar tarefas',
-        UPDATE_ERROR: 'Erro ao atualizar tarefa'
+        UPDATE_ERROR: 'Erro ao atualizar tarefa',
+        LOADING: 'A carregar tarefas...',
+        NO_TASKS: 'Sem tarefas'
+      },
+      FORMS: {
+        WELCOME: 'Bem-vindo',
+        NEW_TASK: 'Nova Tarefa',
+        LOGOUT: 'Sair',
+        FIRST_TASK: 'Criar primeira tarefa',
+        CREATED_AT: 'Criado em',
+        EDIT: 'Editar',
+        SEE_MORE: 'Ver mais'
       }
     });
 
