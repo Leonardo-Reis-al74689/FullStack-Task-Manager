@@ -11,7 +11,7 @@ services:
   - type: web
     name: taskmanager-backend
     env: python
-    region: lisbon  # Escolha a região mais próxima (oregon, frankfurt, singapore)
+    region: frankfurt  # Escolha a região mais próxima (oregon, frankfurt, singapore)
     plan: free
     branch: main
     buildCommand: |
@@ -71,7 +71,7 @@ databases:
     databaseName: taskmanager
     user: taskmanager_user
     plan: free
-    region: lisbon  # Deve ser a mesma região do web service
+    region: frankfurt  # Deve ser a mesma região do web service
     ipAllowList: []  # Vazio = permite apenas serviços Render internos
 
 # ==========================================
