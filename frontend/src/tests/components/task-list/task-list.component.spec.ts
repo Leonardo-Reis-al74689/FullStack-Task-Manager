@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 import { of, throwError } from 'rxjs';
 import { TaskListComponent } from '../../../app/components/task-list/task-list.component';
 import { TaskService } from '../../../app/services/task.service';
@@ -72,6 +74,8 @@ describe('TaskListComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [TaskListComponent],
+      imports: [RouterTestingModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         { provide: TaskService, useValue: taskServiceSpy },
         { provide: AuthService, useValue: authServiceSpy },
