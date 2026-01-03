@@ -1,6 +1,6 @@
-# 📋 Task Manager - Full-Stack Application
+Task Manager - Full-Stack Application
 
-> Sistema completo de gestão de tarefas com backend Flask, frontend Angular e deploy gratuito em cloud.
+> Sistema completo de gestão de tarefas com backend Flask, frontend Angular.
 
 [![Backend](https://img.shields.io/badge/Backend-Flask-blue)](backend/)
 [![Frontend](https://img.shields.io/badge/Frontend-Angular_17-red)](frontend/)
@@ -10,7 +10,7 @@
 
 ---
 
-## 🌟 Funcionalidades
+## Funcionalidades
 
 ### ✅ Gestão de Tarefas
 - ➕ Criar tarefas com título e descrição
@@ -71,7 +71,7 @@
 
 ## 🚀 Quick Start
 
-### Opção 1: Docker (Recomendado)
+### Opção 1: Docker 
 
 ```bash
 # Clonar repositório
@@ -135,46 +135,6 @@ npm start
 📖 **Documentação completa:**
 - [Backend README](backend/README.md)
 - [Frontend README](frontend/README.md)
-
----
-
-## 🌐 Deploy em Produção (100% Gratuito)
-
-### Plataformas Utilizadas
-
-| Componente | Plataforma | Custo | Limites |
-|------------|------------|-------|---------|
-| **Backend API** | [Render](https://render.com) | 💰 Gratuito | 750h/mês, 512MB RAM |
-| **Base de Dados** | [Render PostgreSQL](https://render.com) | 💰 Gratuito | 1GB storage |
-| **Frontend** | [Vercel](https://vercel.com) | 💰 Gratuito | 100GB banda, CDN global |
-| **CI/CD** | GitHub Actions | 💰 Gratuito | 2000 min/mês |
-
-### URLs de Produção
-
-- 🎨 **Frontend:** `https://taskmanager-frontend.vercel.app`
-- 🔧 **Backend API:** `https://taskmanager-backend.onrender.com/api`
-- 🏥 **Health Check:** `https://taskmanager-backend.onrender.com/health`
-
-### Deploy Rápido
-
-1. **Fork este repositório**
-
-2. **Deploy do Backend (Render):**
-   - Criar conta em [render.com](https://render.com)
-   - New > Web Service > Conectar GitHub
-   - Configurar variáveis de ambiente
-   - Aguardar deploy (~5 min)
-
-3. **Deploy do Frontend (Vercel):**
-   - Criar conta em [vercel.com](https://vercel.com)
-   - New Project > Importar do GitHub
-   - Deploy automático (~3 min)
-
-4. **Configuração final:**
-   - Atualizar CORS no backend
-   - Configurar Keep-Alive (GitHub Actions)
-
-📖 **Guia passo-a-passo completo:** [docs/DEPLOY.md](docs/DEPLOY.md)
 
 ---
 
@@ -348,120 +308,13 @@ export const environment = {
 
 ---
 
-## 🐛 Resolução de Problemas
-
-### Problemas comuns e soluções:
-
-| Problema | Solução |
-|----------|---------|
-| **CORS Error** | Atualizar `CORS_ORIGINS` no backend |
-| **Cold Start** | Ativar keep-alive (GitHub Actions) |
-| **BD não conecta** | Verificar `DATABASE_URL` |
-| **Build falha** | Verificar logs no Render/Vercel |
-
-📖 **Guia completo:** [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
-
----
-
-## 📚 Documentação Completa
-
-| Documento | Descrição |
-|-----------|-----------|
-| [📖 DEPLOY.md](docs/DEPLOY.md) | Guia completo de deploy (Render + Vercel) |
-| [🐳 DOCKER.md](docs/DOCKER.md) | Como usar Docker para desenvolvimento |
-| [🔧 TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Resolver problemas comuns |
-| [📊 MONITORING.md](docs/MONITORING.md) | Monitorizar recursos e performance |
-| [🏗️ ARCHITECTURE.md](backend/ARCHITECTURE.md) | Arquitetura detalhada do backend |
-
----
-
-## 🤝 Contribuir
-
-Contribuições são bem-vindas! Para contribuir:
-
-1. **Fork** este repositório
-2. **Crie** um branch para a feature (`git checkout -b feature/MinhaFeature`)
-3. **Commit** as alterações (`git commit -m 'feat: adicionar MinhaFeature'`)
-4. **Push** para o branch (`git push origin feature/MinhaFeature`)
-5. **Abra** um Pull Request
-
-### Convenções de Commit
-
-Usamos [Conventional Commits](https://www.conventionalcommits.org/):
-
-- `feat:` Nova funcionalidade
-- `fix:` Correção de bug
-- `docs:` Documentação
-- `style:` Formatação
-- `refactor:` Refatoração
-- `test:` Testes
-- `chore:` Manutenção
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja [LICENSE](LICENSE) para mais detalhes.
-
----
-
-## 🎯 Roadmap
-
-### ✅ Completo
-- [x] Backend REST API com Flask
-- [x] Frontend Angular com Material Design
-- [x] Autenticação JWT
-- [x] CRUD completo de tarefas
-- [x] Docker & Docker Compose
-- [x] CI/CD com GitHub Actions
-- [x] Deploy gratuito (Render + Vercel)
-- [x] Documentação completa
-- [x] Testes automatizados
-
-### 🚧 Em Progresso
-- [ ] Testes E2E (Cypress)
-- [ ] Paginação de tarefas
-- [ ] Filtros avançados
-
-### 📅 Planeado
-- [ ] WebSockets para atualizações em tempo real
-- [ ] Categorias de tarefas
-- [ ] Etiquetas (tags)
-- [ ] Partilha de tarefas entre utilizadores
-- [ ] Notificações push
-- [ ] API GraphQL (alternativa ao REST)
-- [ ] App mobile (React Native)
-
----
-
 ## 👨‍💻 Autor
 
 **Leonardo Reis**
 
 - GitHub: [@leonardo](https://github.com/leonardo)
-- Email: leonardo@exemplo.com
+- Email: leonardomreis3@gmail.com
 
----
-
-## 🌟 Agradecimentos
-
-- [Flask](https://flask.palletsprojects.com/) - Framework backend
-- [Angular](https://angular.io/) - Framework frontend
-- [Render](https://render.com/) - Hospedagem backend/BD
-- [Vercel](https://vercel.com/) - Hospedagem frontend
-- [Docker](https://www.docker.com/) - Containerização
-
----
-
-## 📞 Suporte
-
-Tem dúvidas ou problemas?
-
-1. 📖 Consulte a [documentação](docs/)
-2. 🐛 Abra uma [issue](https://github.com/seu-usuario/FullStack-Task-Manager/issues)
-3. 💬 Inicie uma [discussão](https://github.com/seu-usuario/FullStack-Task-Manager/discussions)
-
----
 
 <div align="center">
 
