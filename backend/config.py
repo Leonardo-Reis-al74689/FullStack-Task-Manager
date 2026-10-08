@@ -1,4 +1,5 @@
 import os
+import re
 from datetime import timedelta
 from dotenv import load_dotenv
 
@@ -7,10 +8,12 @@ load_dotenv()
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
     
-    # Fix for Render: postgres:// -> postgresql://
-    database_url = os.getenv('DATABASE_URL', 'postgresql://postgres:password@localhost/taskmanager')
-    if database_url.startswith('postgres://'):
-        database_url = database_url.replace('postgres://', 'postgresql://', 1)
+    # Force the psycopg2 driver (the only one installed), whatever scheme
+    # the platform provides: postgres://, postgresql://, postgresql+psycopg://
+    database_url = os.getenv('DATABASE_URL', 'postgresql://localhost/taskmanager')
+    database_url = re.sub(
+        r'^(postgres|postgresql)(\+\w+)?://', 'postgresql+psycopg2://', database_url, count=1
+    )
     SQLALCHEMY_DATABASE_URI = database_url
     
     SQLALCHEMY_TRACK_MODIFICATIONS = False
